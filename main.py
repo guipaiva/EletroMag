@@ -16,7 +16,6 @@ else:
 		exit()
 	
 
-
 n = int(n)
 cargas = []
 coordenadas = []
@@ -42,6 +41,7 @@ for i in range(len(coordenadas)):
 	distancias.append(dist(coord_geradora,coordenadas[i]))
 	forcas.append(forca(campo,cargas[i],distancias[i]))
 
+print('Campo gerado: {:.2e}/dist²'.format(abs(campo)))
 graf(coordenadas, coord_geradora,forcas)
 
 

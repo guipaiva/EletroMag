@@ -47,9 +47,9 @@ def graf(coord,coordG,f):
 	for i in range(len(x)):
 		plt.arrow(x[i],y[i],dx[i]/2,dy[i]/2, head_width=0.1, head_length=0.1, color = 'Red', length_includes_head = True, zorder=2)
 	
-	f = ['%.2e' % x for x in f]
+	f = ['%.2e' % abs(x) for x in f]
 	for i in range(len(x)):
-		ax.annotate(r'$\vec f_{} = {}$'.format(i+1,f[i]),xy = (x[i],y[i]), color = 'black',  ha='right', va='bottom')
+		ax.annotate(r'$\vec f_{}$ = {}C'.format(i+1,f[i]),xy = (x[i],y[i]), color = 'black',  ha='right', va='bottom')
 		print('q{} sofre uma força de: {}C'.format(i+1,f[i]))
 	plt.show()
 
