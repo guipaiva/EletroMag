@@ -1,10 +1,23 @@
 from methods import *
-import numpy
-import plot
+import numpy as np
+from plot import graf
+import time
+
+try:
+	n = int(input("Digite o número de cargas a ser inseridas (Mínimo duas cargas):"))
+except ValueError:
+	print('Número inválido, encerrando o programa...')
+	time.sleep(3)
+	exit()
+else:
+	if n <= 1:
+		print('Número inválido, encerrando o programa...')
+		time.sleep(3)
+		exit()
+	
 
 
-
-n = int(input("Digite o número de cargas a ser inseridas: "))
+n = int(n)
 cargas = []
 coordenadas = []
 distancias = []
@@ -12,25 +25,23 @@ forcas = []
 for i in range(n):
 	print("Digite o valor da carga {} em Coulombs: ".format(i+1),end=' ')
 	cargas.append(input())
-	print("Digite a posição X,Y da carga {}: ".format(i+1))
+	print("Digite a posição da carga {} no formato (X,Y): ".format(i+1))
 	coord = input().split(',')
 	coord[0] = coord[0][1:]
 	coord[1] = coord[1][:-1]
-	coordenadas.append(tuple(coord))
-
+	coordenadas.append(coord)
 
 indice = int(input("Digite qual a carga geradora: "))
 
 c_geradora = cargas.pop(indice-1)
 
 coord_geradora = coordenadas.pop(indice-1)
-
 campo = field(c_geradora)
 
 for i in range(len(coordenadas)):
 	distancias.append(dist(coord_geradora,coordenadas[i]))
 	forcas.append(forca(campo,cargas[i],distancias[i]))
 
+graf(coordenadas, coord_geradora,forcas)
 
-forcas = ['%.3e' % x for x in forcas]
-print(forcas)
+
