@@ -10,7 +10,7 @@ def field(qg):
 	return k*int(qg)#Cálculo do campo em relação a carga geradora, sem a distância, pois ela varia para cada carga
 
 def forca(campo,qn,distancia):
-	if 0 in distancia:
+	if (distancia == 0):
 		print('Erro: Duas cargas não podem ocupar a mesma posição')
 		exit()
 	return campo*int(qn)/distancia#Cálculo da força entre a carga geradora e cada carga qn
