@@ -1,0 +1,23 @@
+Trabalho 01 - Física para Computação (Campo e Força elétrica)
+
+
+Aluno: Diego Gabriel Prata Juliano Dimatteu Telles
+Matrícula: 191057600035
+Aluno: Guilherme Pereira Paiva
+Matrícula: 181057600032
+
+Para a execução do programa basta executar o arquivo main.py
+
+Na hora de escrever as coordenadas de cada carga, é necessário o uso de parênteses e vírgula, respeitando esse modelo: (x,y).
+
+Será executado as funções:
+	methods.py (para cálculos das distâncias, campo e forças)
+	plot.py (para a criação e impressão do gráfico com as forças)
+
+Versão do python utilizada: 
+Python 3.7.3
+
+Bibliotecas utilizadas: 
+Numpy (Para manipulação de dados)
+Matplotlib (Para gerar o gráfico a partir dos dados)
+
