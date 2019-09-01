@@ -2,21 +2,19 @@ from methods import *
 import numpy as np
 from plot import graf
 import time
-
+	#Este bloco serve para tratar exceções caso o usuário digite algum valor inválido
 try:
 	n = int(input("Digite o número de cargas a ser inseridas (Mínimo duas cargas): "))
-except ValueError:#Retorna essa mensagem e encerra o programa caso alguém digite uma letra 
+except ValueError:	#Retorna essa mensagem e encerra o programa caso alguém digite qualquer caractere que não seja número
 	print('Número inválido, encerrando o programa...')
 	time.sleep(3)
 	exit()
 else:
-	if n <= 1:#Retorna essa mensagem e encerra o programa caso alguém digite uma letra 
+	if n <= 1:#Retorna essa mensagem e encerra o programa caso o usuário digite um valor menor ou igual a 1
 		print('Número inválido, encerrando o programa...')
 		time.sleep(3)
 		exit()
 	
-
-n = int(n)
 #Listas usadas para armazenar dados e utilizá-los ao longo dos cálculos 
 cargas = []#Armazena as cargas de cada carga
 coordenadas = []#Armazena as coordenadas das cargas
