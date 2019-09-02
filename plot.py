@@ -23,10 +23,10 @@ def graf(coord,coordG,f):
 	coord = np.array(coord)	#Transforma a lista coordenadas em matriz do numpy para trabalhar melhor
 	x = coord[:,0]	#Separa as coordenadas de todas as cargas em X e Y
 	y = coord[:,1] 	
-	ger_x = int(coordG[0]) #Separa as coordenadas da carga geradora em X e Y
-	ger_y = int(coordG[1])
-	x = [int(i) for i in x] #Transforma todas as coordenadas para valores inteiros, já que foram lidas 
-	y = [int(i) for i in y]	#no formato string
+	ger_x = float(coordG[0]) #Separa as coordenadas da carga geradora em X e Y
+	ger_y = float(coordG[1])
+	x = [float(i) for i in x] #Transforma todas as coordenadas para valores inteiros, já que foram lidas 
+	y = [float(i) for i in y]	#no formato string
 	
 	plt.scatter(ger_x,ger_y, marker = 'P', s=200, c = 'Green') #Cria o Gráfico de dispersão para a carga geradora
 	plt.scatter(x,y, s = 150)	#Cria o Gráfico de dispersão para todas as outras cargas
@@ -51,4 +51,3 @@ def graf(coord,coordG,f):
 		ax.annotate(r'$\vec f_{}$ = {}N'.format(i+1,f[i]),xy = (x[i],y[i]), color = 'black',  ha='right', va='bottom')
 		print('q{} sofre uma força de: {}N'.format(i+1,f[i]))
 	plt.show()	#Mostra o gráfico
-
